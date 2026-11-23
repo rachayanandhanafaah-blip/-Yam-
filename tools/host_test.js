@@ -24,7 +24,7 @@ ok(k > 0, "พบจุดตัด const PARAM");
   sb.__yamText = yam; run(fs.readFileSync(path.join(dir, "loader.js"), "utf8"), "loader.js");
   run("Y7L.boot(__yamText, code => { (0, eval)(code); })".replace("(0, eval)(code)", "__inj(code)"), "boot"); 
   ok(run("typeof computeAll", "t") === "function" && run("typeof dashboardHTML", "t") === "function", "computeAll/dashboardHTML นิยามแล้ว");
-  ok(/^7\.\d+\.\d+-[0-9a-f]{8}$/.test(sb.Y7_BUILD), "Y7_BUILD = รุ่น-แฮช: " + sb.Y7_BUILD);
+  ok(/^\d+\.\d+\.\d+-[0-9a-f]{8}$/.test(sb.Y7_BUILD), "Y7_BUILD = รุ่น-แฮช: " + sb.Y7_BUILD);
   run(fs.readFileSync(path.join(dir, "app.js"), "utf8"), "app.js");
   await new Promise(r => setTimeout(r, 400));
   ok(typeof els.dash.srcdoc === "string" && els.dash.srcdoc.length > 50000, "ขึ้นหน้าแอปใน iframe (srcdoc " + (els.dash.srcdoc || "").length + ")");

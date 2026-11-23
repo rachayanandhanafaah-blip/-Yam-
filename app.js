@@ -62,6 +62,7 @@
   $("sclose").onclick = closeSheet;
   sheet.addEventListener("click", e => { if (e.target === sheet) closeSheet(); });
   const showText = (title, text, share) => {
+    text = thaiAll(text); title = thaiAll(title);   // v3.9.0 เลขไทยทุกจุด
     openSheet(title, `${share ? `<div class="row"><button data-a="copy">📋 คัดลอก</button>${navigator.share ? `<button data-a="share">📤 แชร์</button>` : ""}</div>` : ""}<pre class="txt">${escH(text)}</pre>`);
     const b = sbody.querySelector('[data-a="copy"]'), s = sbody.querySelector('[data-a="share"]');
     if (b) b.onclick = async () => { try { await navigator.clipboard.writeText(text); say("คัดลอกแล้ว"); } catch (e) { say("คัดลอกไม่ได้"); } };
@@ -72,7 +73,7 @@
   function openMenu() {
     const s = st(), t2 = normT2M(s.t2Mode), fl = fsSet();
     const seg = (key, opts, curV) => `<div class="seg">${opts.map(([v, l]) => `<button data-${key}="${v}" class="${String(v) === String(curV) ? "on" : ""}">${l}</button>`).join("")}</div>`;
-    openSheet(`🔮 ${APP} v${VERSION}`, `
+    openSheet(`🔮 ${APP} ${thaiAll("v" + VERSION)}`, `
 <button class="it" data-a="now">🔮 จับยามตอนนี้</button>
 <div class="grp"><div class="lb">✍️ จับยามตามเวลาที่เลือก</div><div class="row"><input type="datetime-local" id="mt" value="${localIso(new Date())}"><button data-a="manual">จับยาม</button></div></div>
 <button class="it" data-a="full">📄 ข้อความเต็มของผลล่าสุด (คัดลอก/แชร์)</button>
@@ -94,7 +95,8 @@ ${installEvt ? `<button class="it" data-a="install">📲 ติดตั้ง�
       lunar: async () => showText("📖 ตรวจจันทรคติ", await lunarProbeText()),
       clear: () => { if (!confirm("ล้างประวัติการจับยามในเครื่องนี้?")) return; const s2 = readJSON(F_SNAPSHOT); if (s2) { s2.history = []; writeJSON(F_SNAPSHOT, s2); if (cur) { cur.history = []; render(cur, curTab(), true); } } closeSheet(); say("ล้างประวัติแล้ว"); },
       about: () => showText("ℹ️ เกี่ยวกับ", [
-        `${APP} v${VERSION} · เว็บแอป build ${g.Y7_BUILD || "-"}`,
+        `${APP} ${verLine()} · เว็บแอป`,
+        `${CREDIT.line} · © ${CREDIT.year}`,
         `ออฟไลน์: ${navigator.serviceWorker && navigator.serviceWorker.controller ? "พร้อม (เก็บไฟล์ในเครื่องแล้ว)" : "ยังไม่พร้อม (เปิดออนไลน์ครั้งแรกให้ครบก่อน)"}`,
         `จันทรคติ: ตารางในตัว ${LUN_RANGE}`,
         "", "ต่างจากแอป Scriptable:",

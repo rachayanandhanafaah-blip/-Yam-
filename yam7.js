@@ -9,6 +9,7 @@
 //   · เรือนของแต่ละเรื่องตาม ภาค ๑ หน้า ๑๑๓–๑๑๔ (+เรือนประกอบฐาน ๘/๙) · เรือนสัมพันธ์ ๑๑๙ คำ · ดาว×ฐานบวก ๙๑ คำ · ฐานพิเศษ
 //   · ดาวเจ้ายาม×ยามต้น/กลาง/ปลาย · แตะเลขในตารางสัตตเลขปริเฉท = ชิ่งทอดเดียว + คำอ่าน · เลขแถว ๑–๙ · ส่วนที่ไม่มีในตำราติดป้าย “ตีความโดยพิสดาร”
 // • v6.9: สัตตเลขปริเฉทตั้งจากเวลา ๑๒ ชม. (ชั่วโมง · นาทีตัวแรก · ตัวหลัง) · เปลี่ยนชื่อ ๗ ตัวกาลชะตา → ยามอัฐกาล · ผังภูมิทักษาวันจร
+// • v3.9.0 (อัปเดตล่าสุด ๒๓ พ.ย. ๒๕๖๙ เวลา ๒๓:๓๒ น. · ปรับเลขรุ่นเป็น ๓.๙.๐ ตามที่ผู้ใช้สั่ง · คะแนนและวิเจ็ตไม่เปลี่ยน) – หน้าตา/การแสดงผลอย่างเดียว: (๑) เอาป้าย "อัตถรจนา · CSV" ออกจากบรรทัดฤกษ์พรหมประสิทธิ์/ทิศพระกาฬจร (๒) ผังตารางเลข ๗ ตัวกับผังภูมิทักษาในแถวเดียวกัน: ขยายผังภูมิทักษาและตรึงความสูงรวมสองตารางให้เท่ากัน (๓) ป้ายระวังเล็กน้อย/ระวัง/ระวังมาก อยู่บรรทัดเดียว (๔) ตารางดาวเดิน น.๒๑๐ เต็มความกว้างหน้า (๕) เลขทุกจุดในหน้าแอป เมนู และข้อความเต็มเป็นเลขไทย รวมเวลา ตัวนับถอยหลัง และตัวเลขในตารางเลข ๗ ตัว (วิเจ็ตคงเดิม) (๗) เครดิต "พัฒนาโดย ตุนท์ วิชธุว (เจ้าฟ้า)" ในหน้าเกี่ยวกับ/เมนู + meta author + คีย์ credit ในผลบันทึก (๖) ท้ายหน้าแสดงเลขรุ่นพร้อมวันที่เวลาที่อัปเดตล่าสุด
 // • v7.9.6: หน้าตา + ข้อมูลเสริม (คะแนนและวิเจ็ตไม่เปลี่ยน · สัตตาภิธรรมยังเป็นตำรารอง ไม่คิดคะแนน) – (๑) ผังสัตตาภิธรรมจัดตารางเลข ๗ ตัวกับผังภูมิทักษา ๓×๓ ไว้แถวเดียวกัน น.๑๘๘–๑๙๖ ๒๐๓ (ไม่เปลี่ยนสูตร) (๒) ปุ่มโหมดมืด/สว่าง (ตามระบบ · เก็บ settings.theme) ข้างปุ่มขนาดอักษร + ปรับรูปแบบปุ่มเป็นกลุ่มปุ่มกรอบบางสองชุด (๓) แก้สีซ้อนทับในตารางสัตตเลข/ยามอัฐกาล: ช่องลัคนาตัวหนังสือเข้มบนพื้นเข้ม · ช่องวงเลขดาวเจ้ายามและช่องเลือกเรื่อง/แตะเลขที่พื้นโปร่งมืดกว่าช่องปกติ (๔) แสดงฤกษ์พรหมประสิทธิ์และทิศพระกาฬจรจากตาราง CSV ในตัว (๑ ม.ค. ค.ศ. ๑๙๓๗ – ๓๑ ธ.ค. ค.ศ. ๒๐๕๗) เมื่อไม่ได้เลือกปฏิทิน · ป้าย "อัตถรจนา" · เฉพาะหน้าแอป วิเจ็ตไม่แสดง
 // • v7.9.5: คำพยากรณ์เกตุแทรกเรียบเรียงใหม่ (ไม่ใช่ถ้อยคำในเล่ม) · เกตุไม่มีเรือนของตน อาศัย/หนุนดาวอื่น ผลฉับพลัน เร้นลับ · พื้นจากดาวเสวยอายุ (๑ หรือ ๘) · ทิศผลจากดาวที่เกตุทับในผัง (ศุภ ๒ ๔ ๕ ๖ หนุน · บาป ๑ ๓ ๗ วุ่นวาย ตามข้อตัดสิน 60) · คงคำพยากรณ์ น.๑๘๕ ไว้ประกอบ · ไม่คิดคะแนน
 // • v7.9.4: ยามอุบัติกาลให้เกตุแทรกได้ (น.๑๗๒ ๑๗๖: ดาวแทรกดวงแรกคือดาวถัดจากดาวเสวยอายุตามภูมิทักษา ถ้าคู่ ๑ กับ ๘ เวียนเข้าเกตุ ๙ · สูตรเดียวกับ s6Seq9 ของ satta7) · เกตุแทรกอ่านดาวเสวยอายุเป็นหลัก ประกอบคำพยากรณ์เกตุ (๙) เสวยอายุ น.๑๘๕ · ยามใหญ่คงเดิม · ไม่คิดคะแนน
@@ -52,7 +53,10 @@
 //   · การ์ดจับยามเฉพาะเรื่อง ๒๘ เรื่อง (เรือนตาม ภาค ๑ หน้า ๑๑๓–๑๑๕) + กฎสุขภาพ อุบัติเหตุ ผ่าตัด ยานพาหนะ ต่างประเทศ · ลักษณะดาว
 // กฎให้คะแนนเป็นการออกแบบเพื่อสรุปผล (อิงหลักตำรา แต่ตัวเลขคะแนนกำหนดเอง) – ใช้เพื่อความบันเทิง
 
-const VERSION = "7.9.6";
+const VERSION = "3.9.0";
+// เครดิตผู้พัฒนา (v3.9.0): แสดงในหน้า "เกี่ยวกับ" (เว็บ) และเมนู (Scriptable) · ฝัง meta/manifest + คีย์ credit ในผลที่บันทึก
+const CREDIT = { by: "ตุนท์ วิชธุว (เจ้าฟ้า)", line: "พัฒนาโดย ตุนท์ วิชธุว (เจ้าฟ้า)", year: "๒๕๖๙" };
+const BUILD_AT = "2026-11-23T23:32:00+07:00";   // วันที่และเวลาที่อัปเดตล่าสุดของรุ่นนี้ (แก้ทุกครั้งที่ออกรุ่นใหม่)
 const APP = "สัตตเลขลักษณากาล";
 
 // ================= ตั้งค่า =================
@@ -378,7 +382,13 @@ const THD = "๐๑๒๓๔๕๖๗๘๙";
 const thaiNum = s => String(s).split(KEEP).map((seg, i) => (i % 2 ? seg : seg.replace(/\d{1,2}:\d{2}(?::\d{2})?|\d/g, m => (m.length > 1 ? m : THD[m])))).join("");
 // แปลงเลขไทยเฉพาะข้อความใน <body> (ไม่แตะ CSS/สคริปต์/แอตทริบิวต์)
 function thaiHTML(h) { const a = h.indexOf("<body"), b = h.lastIndexOf("<script>");
-  return h.slice(0, a) + h.slice(a, b).replace(/>([^<]+)</g, (m, t) => ">" + thaiNum(t) + "<") + h.slice(b); }
+  return h.slice(0, a) + h.slice(a, b).replace(/>([^<]+)</g, (m, t) => ">" + thaiAll(t) + "<") + h.slice(b); }
+// v3.9.0 เลขไทยทุกจุดในหน้าแอป (รวมเวลา และตัวเลขในตารางเลข ๗ ตัว) · thaiNum เดิมยังคงไว้ให้วิเจ็ต
+const thaiAll = s => String(s).split(KEEP).join("").replace(/\d/g, d => THD[d]);
+const thaiTxtHTML = h => String(h).replace(/(^|>)([^<>]+)(?=<|$)/g, (m, a, t) => a + thaiAll(t));
+const fmtBuild = iso => { const m = String(iso).match(/\d+/g), M = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+  return thaiAll(`${+m[2]} ${M[m[1] - 1]} ${+m[0] + 543} เวลา ${m[3]}:${m[4]} น.`); };   // อ่านจากสตริงตรง ๆ ไม่ขึ้นกับเขตเวลาเครื่อง
+const verLine = () => thaiAll(`v${VERSION}`) + " · อัปเดตล่าสุด " + fmtBuild(BUILD_AT);
 const pad2 = n => String(n).padStart(2, "0");
 const hm = t => `${pad2(t.getHours())}:${pad2(t.getMinutes())}`;
 const dkey = d => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
@@ -822,7 +832,7 @@ function liveSnap(snap, now) {
   const t2m = t2ModeSet(), c = buildChart(now, lunar), a = analyze(c), T2 = table2Of(now, c, t2m);
   const label = lunar.phase ? lunarLabel(lunar) : `เดือน${MONTH_LABEL[lunar.month]}`;
   return {
-    version: VERSION, computedAt: now.toISOString(), questionTime: now.toISOString(), source: "auto", t2Mode: t2m,
+    version: VERSION, credit: CREDIT.by, computedAt: now.toISOString(), questionTime: now.toISOString(), source: "auto", t2Mode: t2m,
     validUntil: c.subEnd.toISOString(), yamEnd: c.yamEnd.toISOString(),
     lunar: { ...lunar, label, source: src, wanPhra: wan, warnings: [] },
     chart: { rows: c.rows, col: c.col, yamNo: c.yamNo, yamLord: c.yamLord, sub: c.sub, rowKey: c.rowKey, dayIdx: c.dayIdx, isNight: c.isNight, naksat: c.naksat },
@@ -869,7 +879,7 @@ async function computeAll(when, opt) {
     ["b5","b6","b7","b8","b9"].map(k => `ฐ.${k[1]}  ` + B59[k].map(v => ` ${v} `.padStart(4)).join(""))).join("\n");
 
   const snap = {
-    version: VERSION, computedAt: new Date().toISOString(), questionTime: when.toISOString(), source: opt.source, t2Mode: t2m,
+    version: VERSION, credit: CREDIT.by, computedAt: new Date().toISOString(), questionTime: when.toISOString(), source: opt.source, t2Mode: t2m,
     validUntil: c.subEnd.toISOString(), yamEnd: c.yamEnd.toISOString(),
     lunar: { ...lunar, label: lunarText, source: lunarSource, wanPhra: !!LR.wanPhra, calendarTitle: LR.calendarTitle || null, matchedTitle: LR.matchedTitle || null, warnings: LR.warn },
     chart: { rows: c.rows, col: c.col, yamNo: c.yamNo, yamLord: c.yamLord, sub: c.sub, rowKey: c.rowKey, dayIdx: c.dayIdx, isNight: c.isNight, naksat: c.naksat },
@@ -975,7 +985,7 @@ async function lunarProbeText() {
 
 async function probeText() {
   const settings = readJSON(F_SETTINGS) || {};
-  const out = [`🔍 โหมดตรวจสอบ v${VERSION}`];
+  const out = [`🔍 โหมดตรวจสอบ ${thaiAll("v" + VERSION)}`];
   let cals = [];
   try { cals = await Calendar.forEvents(); } catch (e) { return out.concat(`อ่านรายชื่อปฏิทินไม่ได้: ${e.message || e}`).join("\n"); }
   out.push(`ปฏิทินในเครื่อง (${cals.length}):`);
@@ -2385,7 +2395,7 @@ function dashboardHTML(snap) {
   const dayTxt = `${ch.isNight ? "คืน" : ""}วัน${DAYS[ch.dayIdx]}${ch.dayIdx === 3 && ch.isNight ? " (ราหู)" : ""}`;
   const EXr = (snap.extras && snap.extras.rerk) || [], EXk = (snap.extras && snap.extras.kala) || [];
   let CX = null; try { CX = (EXr.length && EXk.length) ? null : rkxOf(astroDateOf(new Date(snap.questionTime))); } catch (e) {}   // v7.9.6 ตาราง CSV ในตัว (ใช้เมื่อไม่มีปฏิทินเสริม · ไม่คิดคะแนน ไม่ขึ้นวิเจ็ต)
-  const cxTag = ` <span class="nb">อัตถรจนา · CSV</span>`;
+  const cxTag = "";   // v3.9.0 เอาป้าย "อัตถรจนา · CSV" ออก
   const cxR = !EXr.length && CX ? `<div class="m3">🌟 ฤกษ์พรหมประสิทธิ์: <b>${esc(CX.rerk.length ? CX.rerk.map(n => `${RK_IC[n] || ""} ${n}`.trim()).join(", ") : CX.bad ? "❌ ดิถีพิฆาต (วันเสีย)" : "ไม่มี (วันปกติ)")}</b>${CX.rerk.length && CX.bad ? " · ❌ ดิถีพิฆาต" : ""}${CX.note ? ` · ${esc(thaiNum(CX.note))}` : ""}${cxTag}</div>` : "";
   const cxK = !EXk.length && CX ? `<div class="m3">🚫 ทิศพระกาฬจร: <b class="badt">เลี่ยงทิศ${esc(CX.dir)}</b>${cxTag}</div>` : "";
   const warn = [...(L.warnings || []), ...((snap.extras && snap.extras.warn) || [])].map(w => `<div class="warn">⚠️ ${esc(w)}</div>`).join("");
@@ -2579,9 +2589,9 @@ function dashboardHTML(snap) {
       ...TR.sup.flatMap(u => ids(linksOf(u.v, R, B), 2, "l")),
       ...TR.cells.flatMap((c, n) => [[`${c.echo.hk}${c.col}`, col(n), "j"], ...ids(c.echo.L, col(n), "e")])]; };
   const TCJS = JSON.stringify(TT.map(ringOf));
-  const TLJS = JSON.stringify(TT.map(s => (s.TR.planet ? [[0, thaiNum(`ดาว${P[s.tp.pl].n} ${TH(s.tp.pl)}`)]] : s.TR.cells.map((c, n) => [n % 2, thaiNum(c.house)])).concat(s.TR.sup.map(u => [2, thaiNum(`${u.h} ${B89TH[u.bk]}`)]))));
-  const TAPJS = JSON.stringify(TAP).replace(/</g, "\\u003c");
-  const TNJS = JSON.stringify(TOPICS.map(t => thaiNum(`${t.ic} ${t.k}`)));
+  const TLJS = JSON.stringify(TT.map(s => (s.TR.planet ? [[0, thaiAll(`ดาว${P[s.tp.pl].n} ${TH(s.tp.pl)}`)]] : s.TR.cells.map((c, n) => [n % 2, thaiAll(c.house)])).concat(s.TR.sup.map(u => [2, thaiAll(`${u.h} ${B89TH[u.bk]}`)]))));
+  const TAPJS = JSON.stringify(TAP, (k, v) => (k === "h" && typeof v === "string" ? thaiTxtHTML(v) : v)).replace(/</g, "\\u003c");
+  const TNJS = JSON.stringify(TOPICS.map(t => thaiAll(`${t.ic} ${t.k}`)));
   const sumBody = `<div class="sbx ${vS}">
     <div class="agr ${vS}" id="tot"><b>${esc(S.agree.word)}</b><span class="bdg ${S.agree.bd}">${esc(S.agree.badge)}</span></div>
     ${S.agree.bd === "mix" ? `<p class="smsg" id="cvm">${esc(S.msg)}</p>` : ""}
@@ -3123,6 +3133,21 @@ body.fs2{--fs:1.2;--num:25px;--circ:34px;--nm:10.5px}
 :is(.t2t.tapping,.lgm) .cell.rp.rpf{background:var(--pc);color:var(--onpc)}
 :is(.t2t.tapping,.lgm) .cell.lag:is(.rp,.rb):not(.rpf){color:var(--tx)}
 :is(.t2t.tapping,.lgm) .cell.lag.rb:not(.rp){background:color-mix(in srgb,var(--pc) 15%,var(--tile))}
+/* ===== v3.9.0 หน้าตาอย่างเดียว (คะแนนไม่เปลี่ยน) ===== */
+/* ป้ายระวังเล็กน้อย/ระวัง/ระวังมาก บรรทัดเดียว: ขยายช่องป้ายและห้ามตัดบรรทัด */
+.arow{grid-template-columns:calc(90px*var(--fs)) minmax(0,1fr)}
+#sumc .sbx .arow{grid-template-columns:calc(86px*var(--fs)) minmax(0,1fr)}
+.arow>.al,.arow>.al .svt{white-space:nowrap}
+/* ตารางดาวเดิน น.๒๑๐ เต็มความกว้างหน้า */
+.ddg{max-width:none;width:100%;margin:6px 0}
+/* ผังเลข ๗ ตัวกับผังภูมิทักษา: สูงเท่ากัน (๔ แถว × ๓๔px) ช่องผังภูมิใหญ่ขึ้นให้สายตาเห็นขนาดใกล้ตารางเลข */
+.bkrow{align-items:stretch;gap:8px}
+.bkrow .bkt{grid-auto-rows:34px;align-content:stretch}
+.bkrow .bkt .bk,.bkrow .bkt .bks{padding:0;display:flex;align-items:center;justify-content:center;font-size:15px}
+.bkrow .bhg{grid-template-columns:auto 32px 32px 32px auto;grid-template-rows:17px 34px 34px 34px 17px;align-items:stretch}
+.bkrow .bhg .bhl{font-size:11px;display:flex;align-items:center;justify-content:center;padding:0 2px}
+.bkrow .bhg .bhc{height:auto;font-size:15px}
+.bkrow .bhg .bhc b{min-width:26px;height:26px;line-height:26px}
 </style></head><body class="fs${FS}"><div class="wrap">
 
 <div class="top"><div class="brand">${iconSVG(ch.yamNo)}<span>${APP}</span></div><div class="pill ${vS}" id="pill">${esc(S.agree.short)}</div></div>
@@ -3185,7 +3210,7 @@ ${S6O.yu || ""}
 <a class="btn" href="yam://refresh">↻ จับยามใหม่ตอนนี้</a>
 <div class="lnk" style="margin-top:-4px">จับยามใหม่แล้ว ปิดหน้านี้ (Close) วิเจ็ตจะอัปเดตตามผลใหม่</div>
 <a class="lnk" href="yam://menu">⚙️ เมนู / ตั้งค่าปฏิทิน (แตะแล้วกด Close)</a>
-<div class="foot">${srcFoot}<br>คำนวณ ${esc(hm(new Date(snap.computedAt)))} น. · v${esc(VERSION)}<br>กฎให้คะแนนเป็นการออกแบบเพื่อสรุปผล ไม่ใช่ตำราโดยตรง ใช้เพื่อความบันเทิง</div>
+<div class="foot">${srcFoot}<br>คำนวณ ${esc(hm(new Date(snap.computedAt)))} น. · ${esc(verLine())}<br>กฎให้คะแนนเป็นการออกแบบเพื่อสรุปผล ไม่ใช่ตำราโดยตรง ใช้เพื่อความบันเทิง</div>
 </div>
 <script>
 (function(){var t=document.querySelector(".thm");if(t&&t.getAttribute("data-th")==="auto"&&window.matchMedia){var d=matchMedia("(prefers-color-scheme: dark)").matches,a=t.querySelectorAll("a");for(var i=0;i<a.length;i++)a[i].classList.toggle("on",a[i].getAttribute("data-m")===(d?"dark":"light"));}})();
@@ -3197,13 +3222,14 @@ function showTab(n){n=+n||0;if(n<0||n>3)n=0;window.YTAB=n;
 (function(){var a=document.querySelectorAll(".ytabs a");for(var i=0;i<a.length;i++)a[i].addEventListener("click",function(e){e.preventDefault();showTab(this.getAttribute("data-tab"));window.scrollTo(0,0);});})();
 (function(){
   var S=${yamStart.getTime()},V=${valid.getTime()},Y=${CFG.yamMinutes};
+  var TD="๐๑๒๓๔๕๖๗๘๙";function T(x){return String(x).replace(/\d/g,function(d){return TD.charAt(d);});}
   function tick(){
     var n=Date.now(),cd=document.getElementById("cd");
     var mi=Math.max(0,Math.min(Y-1,Math.floor((n-S)/60000))),cur=Math.floor(mi/10);
     var ds=document.querySelectorAll(".dt");
     for(var i=0;i<ds.length;i++){ds[i].className="dt"+(i<cur?" past":(i===cur?" now":""));}
     var m=Math.ceil((V-n)/60000);
-    if(m>0){var h=Math.floor(m/60),r=m%60;cd.innerHTML="เหลือ <b>"+(h>0?h+" ชม. ":"")+r+" นาที</b>";}
+    if(m>0){var h=Math.floor(m/60),r=m%60;cd.innerHTML="เหลือ <b>"+(h>0?T(h)+" ชม. ":"")+T(r)+" นาที</b>";}
     else{cd.innerHTML="<b>เลยช่วงยามแล้ว</b> · กดจับยามใหม่";}
   }
   tick();setInterval(tick,15000);
@@ -3332,7 +3358,7 @@ if (config.runsInWidget) {
   // ---------- เปิดในแอป ----------
   // รอให้หน้าต่างเดิมปิดสนิทก่อนเปิดหน้าต่างใหม่ (กัน Alert ค้างหลัง Calendar picker)
   const sleep = ms => new Promise(r => Timer.schedule(ms, false, () => r()));
-  const show = async (title, msg) => { await sleep(600); const a = new Alert(); a.title = title; a.message = msg; a.addAction("ตกลง"); await a.present(); };
+  const show = async (title, msg) => { await sleep(600); const a = new Alert(); a.title = thaiAll(title); a.message = thaiAll(msg); a.addAction("ตกลง"); await a.present(); };
   const pickCalendar = async (idKey = "calendarId", titleKey = "calendarTitle") => {
     let sel = null;
     try { sel = await Calendar.presentPicker(false); } catch (e) { sel = null; } // กดยกเลิก = ไม่เลือก
@@ -3361,8 +3387,8 @@ if (config.runsInWidget) {
   const showMenu = async () => {
     const st = readJSON(F_SETTINGS) || {};
     const m = new Alert();
-    m.title = `🔮 ${APP} v${VERSION}`;
-    m.message = `📅 จันทรคติ: ${st.calendarTitle || "ยังไม่ได้เลือก"}\n🌟 ฤกษ์พรหมประสิทธิ์: ${st.rerkTitle || "ยังไม่ได้เลือก"}\n🧭 ทิศพระกาฬจร: ${st.kalaTitle || "ยังไม่ได้เลือก"}\n🕐 ตั้งยามสัตตเลข: ${T2MODE_TH[normT2M(st.t2Mode)]}\n🔠 ขนาดตัวอักษร: ${FS_TH[fsSet()]}`;
+    m.title = `🔮 ${APP} ${thaiAll("v" + VERSION)}`;
+    m.message = `📅 จันทรคติ: ${st.calendarTitle || "ยังไม่ได้เลือก"}\n🌟 ฤกษ์พรหมประสิทธิ์: ${st.rerkTitle || "ยังไม่ได้เลือก"}\n🧭 ทิศพระกาฬจร: ${st.kalaTitle || "ยังไม่ได้เลือก"}\n🕐 ตั้งยามสัตตเลข: ${T2MODE_TH[normT2M(st.t2Mode)]}\n🔠 ขนาดตัวอักษร: ${FS_TH[fsSet()]}\n\nℹ️ ${CREDIT.line} · © ${CREDIT.year}`;
     ["🔮 จับยามตอนนี้", "📅 เลือกปฏิทินจันทรคติ", "🌟 เลือกปฏิทินฤกษ์พรหมประสิทธิ์", "🧭 เลือกปฏิทินทิศพระกาฬจร", "🔍 โหมดตรวจสอบ", "📄 ผลล่าสุด", "🖼 ดูตัวอย่างวิเจ็ต", "📖 ตรวจจันทรคติ", "🕐 ตั้งยามสัตตเลข: ๑๒/๒๔ ชม.", "🔠 ขนาดตัวอักษร: ปกติ/ใหญ่/ใหญ่มาก"].forEach(x => m.addAction(x));
     m.addCancelAction("ปิด");
     const i = await m.present();
