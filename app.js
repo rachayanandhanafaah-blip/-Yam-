@@ -6,12 +6,15 @@
     .replace(/<div class="lnk" style="margin-top:-4px">จับยามใหม่แล้ว ปิดหน้านี้ \(Close\)[^<]*<\/div>/, "")
     .replace("⚙️ เมนู / ตั้งค่าปฏิทิน (แตะแล้วกด Close)", "⚙️ เมนู / ตั้งค่า");
   const st = () => readJSON(F_SETTINGS) || {};
+  // v7.9.6 โหมดมืด/สว่าง: ตัวหน้าเว็บ (หน้าโหลด เมนู) ตามค่าเดียวกับหน้าแอปใน iframe
+  const applyTheme = () => { try { const t = themeSet(); if (t === "auto") g.document.documentElement.removeAttribute("data-theme"); else g.document.documentElement.setAttribute("data-theme", t); } catch (e) {} };
   const setSt = o => writeJSON(F_SETTINGS, Object.assign(st(), o));
   const escH = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   g.Y7W = { webFix };
   const D = g.document, $ = id => D.getElementById(id);
   if (!D || !$("dash")) return;   // โหมดทดสอบใน node
 
+  applyTheme();
   const frame = $("dash"), boot = $("boot"), sheet = $("sheet"), sbody = $("sbody"), stitle = $("stitle"), toast = $("toast");
   let cur = null, installEvt = null, busy = false, upd = false;
 
@@ -49,6 +52,7 @@
     if (u.indexOf("yam://refresh") === 0) refresh();
     else if (u.indexOf("yam://t2mode") === 0) { setSt({ t2Mode: normT2M(st().t2Mode) === "24" ? "12" : "24" }); refresh(); }
     else if (u.indexOf("yam://fsz") === 0) { const m = /[?&]l=(\d)/.exec(u); setSt({ fontLevel: normFS(m ? m[1] : 1) }); if (cur) render(cur, curTab(), true); }
+    else if (u.indexOf("yam://theme") === 0) { const m = /[?&]m=(\w+)/.exec(u); setSt({ theme: normTM(m ? m[1] : "auto") }); applyTheme(); if (cur) render(cur, curTab(), true); }
     else if (u.indexOf("yam://menu") === 0) openMenu();
   }
 
@@ -74,12 +78,14 @@
 <button class="it" data-a="full">📄 ข้อความเต็มของผลล่าสุด (คัดลอก/แชร์)</button>
 <div class="grp"><div class="lb">🕐 ตั้งยามสัตตเลขปริเฉท</div>${seg("t2", [["12", T2MODE_TH["12"]], ["24", T2MODE_TH["24"]]], t2)}</div>
 <div class="grp"><div class="lb">🔠 ขนาดตัวอักษร</div>${seg("fs", FS_TH.map((x, i) => [i, x]), fl)}</div>
+<div class="grp"><div class="lb">🌗 โหมดสี</div>${seg("th", [["auto", "ตามระบบ"], ["light", "สว่าง"], ["dark", "มืด"]], themeSet())}</div>
 ${installEvt ? `<button class="it" data-a="install">📲 ติดตั้งเป็นแอปบนหน้าจอหลัก</button>` : ""}
 <button class="it" data-a="lunar">📖 ตรวจจันทรคติ</button>
 <button class="it" data-a="clear">🗑 ล้างประวัติการจับยาม</button>
 <button class="it" data-a="about">ℹ️ เกี่ยวกับเว็บแอปนี้</button>`);
     sbody.querySelectorAll("[data-t2]").forEach(b => b.onclick = () => { setSt({ t2Mode: b.dataset.t2 }); closeSheet(); refresh(); say(`สัตตเลขปริเฉทใช้${T2MODE_TH[b.dataset.t2]}`); });
     sbody.querySelectorAll("[data-fs]").forEach(b => b.onclick = () => { setSt({ fontLevel: +b.dataset.fs }); closeSheet(); if (cur) render(cur, curTab(), true); });
+    sbody.querySelectorAll("[data-th]").forEach(b => b.onclick = () => { setSt({ theme: normTM(b.dataset.th) }); applyTheme(); closeSheet(); if (cur) render(cur, curTab(), true); });
     const act = {
       now: () => { closeSheet(); refresh(); },
       manual: () => { const v = $("mt").value, d = v ? new Date(v) : null; if (!d || isNaN(d)) return say("เลือกวันเวลาก่อน"); closeSheet(); refresh(d, "manual-time"); },
@@ -93,7 +99,7 @@ ${installEvt ? `<button class="it" data-a="install">📲 ติดตั้ง�
         `จันทรคติ: ตารางในตัว ${LUN_RANGE}`,
         "", "ต่างจากแอป Scriptable:",
         "• ไม่มีวิเจ็ตและคำสั่งลัด · ใช้ “ข้อความเต็ม” คัดลอกหรือแชร์แทน",
-        "• อ่านปฏิทินในเครื่องไม่ได้ จึงไม่มีฤกษ์พรหมประสิทธิ์และทิศพระกาฬจรจากปฏิทิน",
+        "• อ่านปฏิทินในเครื่องไม่ได้ ฤกษ์พรหมประสิทธิ์และทิศพระกาฬจรจึงใช้ตาราง CSV ในตัว (ป้าย อัตถรจนา)",
         "• ตั้งค่าและประวัติเก็บในเบราว์เซอร์ของเครื่องนี้เท่านั้น",
         "", "สูตรและคะแนนเป็นชุดเดียวกับ Scriptable รุ่นเดียวกัน"].join("\n"))
     };
@@ -123,6 +129,16 @@ ${installEvt ? `<button class="it" data-a="install">📲 ติดตั้ง�
     }).catch(() => {});
     navigator.serviceWorker.addEventListener("controllerchange", () => { if (upd) { upd = false; location.reload(); } });
   }
+
+  // ---------- ตรวจรุ่นใหม่ของ yam7.js (แทนที่ไฟล์บน GitHub แล้วเว็บจะเห็นเองเมื่อออนไลน์ ไม่ต้องแก้ build/sw) ----------
+  let chk = false;
+  async function checkUpdate() {
+    if (chk || !g.Y7L || !g.Y7_HASH) return; chk = true;
+    try { const r = await fetch("yam7.js", { cache: "no-cache" }); if (r.ok) { const h = g.Y7L.hash(await r.text()); if (h !== g.Y7_HASH) say("มีรุ่นใหม่ของแอป", "อัปเดต", () => location.reload()); } } catch (e) {}
+    chk = false;
+  }
+  setTimeout(checkUpdate, 4000);
+  D.addEventListener("visibilitychange", () => { if (D.visibilityState === "visible") checkUpdate(); });
 
   refresh();
 })(window);
